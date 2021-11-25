@@ -1,0 +1,76 @@
+@import "../../../../node_modules/bootstrap/scss/bootstrap.scss";
+
+.path-container {
+  padding-left: 14px;
+  font-family: Poppins;
+  font-weight: bold;
+  color: #707070;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.loading-container {
+  height: 100%;
+}
+
+.browser-container {
+  margin-top: 40px;
+}
+
+.file-container {
+  width: 100%;
+  height: 69px;
+  background-color: #DCEFFF;
+  color: #707070;
+  border-radius: 7px;
+  transition-duration: .5s;
+
+  img {
+    height: 45px;
+  }
+
+  &:hover {
+    height: 75px;
+    padding: 4px;
+    transition-duration: .5s;
+    cursor: pointer;
+  }
+}
+
+.hidden-file {
+  opacity: 70%;
+}
+
+.icon-container {
+  height: 100%;
+  padding-top: 10px;
+}
+
+.file-name-container {
+  font-size: 17px;
+  color: #707070;
+  font-family: Poppins;
+}
+
+.file-size {
+  width: 100%;
+  text-align: left;
+  color: #707070;
+  font-family: Poppins;
+}
+
+.file-permissions {
+  width: 100%;
+  padding-right: 10px;
+  text-align: right;
+  color: #707070;
+  font-family: Poppins;
+}
+
+.file-date-created {
+  font-size: 10pt;
+  width: 100%;
+  text-align: center;
+  color: #707070;
+  font-family: Poppins;
+}

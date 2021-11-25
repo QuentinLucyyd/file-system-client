@@ -1,0 +1,24 @@
+<app-search (inputChange)="onSearchInputChange($event)"></app-search>
+<div class="path-container">
+  <h3>.{{path}}</h3>
+</div>
+<div *ngIf="loading" class="loading-container d-flex justify-content-center"><div class="lds-dual-ring"></div></div>
+<div *ngIf="!loading" class="browser-container">
+  <div *ngIf="path != ''" class="file-container return-icon d-flex align-items-center m-2 pl-3" [routerLink]="['/home']"  [queryParams]="{path: this.path.split('/').slice(0, -1).join('/')}">
+    <img src="assets/images/return-folder-icon.png">
+    <h2 class="ml-2">..</h2>
+  </div>
+  <div class="file-container d-flex align-items-center m-2" *ngFor="let listing of listings" [routerLink]="['/home']" [queryParams]="{path:(listing.directory) ? path + '/' + listing.name : path}">
+    <div [ngClass]="{'hidden-file': listing.name.startsWith('.')}" class="icon-container col-1 d-flex justify-content-center">
+      <img [src]="listing.directory ? 'assets/images/folder-icon.png' : 'assets/images/file-icon.png'">
+    </div>
+    <div class="file-name-container col">
+      {{listing.name}}
+    </div>
+    <div class="file-details d-flex flex-row justify-content-around p-2 col-5">
+      <div class="file-date-created col-6">{{listing.created | date:'short'}}</div>
+      <div class="file-permissions col-5">{{listing.permissions}}</div>
+      <div class="file-size col-4">{{listing.size}}</div>
+    </div>
+  </div>
+</div>
